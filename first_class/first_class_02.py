@@ -65,6 +65,8 @@ print(sum(range(1, 51)))
 print(sum(range(51, 100)))
 
 print_line('Averager')
+
+
 # 별거 아니고 호출시 배열로 값을 관리할 수 있게 한다.
 class Averager:
     def __init__(self):
@@ -78,14 +80,28 @@ class Averager:
 
 averager = Averager()
 
+print('\n', '-' * 10)
 print(dir(averager))
+
+print('\n', '-' * 10)
+print('dict : ', averager.__dict__)
 print(averager(10))
+
+print('\n', '-' * 10)
+print('dict : ', averager.__dict__)
 print(averager(30))
+
+print('\n', '-' * 10)
+print('dict : ', averager.__dict__)
 print(averager(80))
+
+print('\n', '-' * 10)
+print('dict : ', averager.__dict__)
 print(averager(70))
 
-
 print_line('ClosureEx')
+
+
 class ClosureEx:
     series = []
     _name: str
@@ -101,19 +117,30 @@ class ClosureEx:
         print(f'inner inst id = {id(self)} , {self._series}')
 
 
-ce1 = ClosureEx('KIM' , 10)
-ce2 = ClosureEx('LEE' , 20)
-ce3 = ClosureEx('PARK' , 30)
+ce1 = ClosureEx('KIM', 10)
+ce2 = ClosureEx('LEE', 20)
+ce3 = ClosureEx('PARK', 30)
 
-print(dir(ce1))
-ce1()
-ce1()
-ce1()
-ce2()
-ce2()
-ce2()
-ce3()
-ce3()
-ce3()
+print('\n', '-' * 5, 'dir', '-' * 5)
+print('\n', dir(ce1))
 
+print('\n', '-' * 5, 'ce1', '-' * 5)
+ce1()
+ce1()
+ce1()
+print('dict : ', ce1.__dict__)
+print(ClosureEx.series)
+
+print('\n', '-' * 5, 'ce2', '-' * 5)
+ce2()
+ce2()
+ce2()
+print('dict : ', ce2.__dict__)
+print(ClosureEx.series)
+
+print('\n', '-' * 5, 'ce3', '-' * 5)
+ce3()
+ce3()
+ce3()
+print('dict : ', ce3.__dict__)
 print(ClosureEx.series)
